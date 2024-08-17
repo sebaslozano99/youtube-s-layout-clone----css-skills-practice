@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 #header{
     /* border: 1px solid red; */
+    background-color: #fff;
     height: 3.56em;
+    width: 100%;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 300;
 }
 
 
@@ -22,8 +30,8 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    padding-left: 1em;
-    gap: 25px;
+    padding-left: 1.8em;
+    gap: 30px;
 }
 
 
@@ -70,7 +78,7 @@
 
 .middle-box button {
     border: 1px solid gray;
-    width: 50px;
+    width: 60px;
     height: 35px;
     background-color: rgb(247, 247, 247);
     border-color: rgb(204, 204, 204);
@@ -78,7 +86,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
+
+.middle-box button:first-of-type:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.middle-box button:hover .toolstip {
+    display: block;
+}
+
+.middle-box button .toolstip {
+    background-color: rgba(96, 96, 96, 0.9);
+    /* display: inline-block; */
+    text-wrap: nowrap;
+    padding: 8px;
+    font-size: 10px;
+    border-radius: 2px;
+    color: #fff;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+
 
 .middle-box button img {
     width: 1.4em;
@@ -95,6 +129,7 @@
 }
 
 
+
 /** HEADER CENTRAL-BOX -- SEARCH INPUT **/
 
 
@@ -104,34 +139,70 @@
 
 /** HEADER RIGHT-BOX -- MY ACCOUNT **/
 
+
 .right-box {
-    /* border: 1px solid green; */
+    /* border: 1px solid red; */
     width: 30%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: right;
-    gap: 1.5em;
-    padding-right: 1em;
+    column-gap: 1.4em;
+    padding-right: 1.8em;
 }
 
 
-.right-box div{
+
+/** toolstips **/
+
+.toolstips-container {
     width: 24px;
     height: 24px;
     cursor: pointer;
+    position: relative;
 }
 
+.toolstips-container:hover .toolstip {
+    display: block;
+}
 
-.right-box div:last-child{
+.toolstips-container .toolstip {
+    background-color: rgba(96, 96, 96, 0.9);
+    /* display: inline-block; */
+    text-wrap: nowrap;
+    padding: 8px;
+    font-size: 10px;
+    border-radius: 2px;
+    color: #fff;
+    position: absolute;
+    bottom: -43px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+/** toolstips **/
+
+
+
+
+
+/** My channel **/
+
+.right-box .myChannel {
     width: 32px;
     height: 32px;
+    cursor: pointer;
 }
 
-.right-box div img {
+.right-box .myChannel img {
     width: 100%;
     height: 100%;
 }
+
+/** My channel **/
+
+
 
 
 
@@ -144,3 +215,179 @@
 
 
 
+/** ASIDE NAVIGATION BAR **/
+
+nav {
+    width: 6.5vw;
+    height: 90vh;
+    position: fixed;
+    left: 0;
+    z-index: 200;
+
+    /* border: 1px solid red; */
+}
+
+
+nav div {
+    height: 65px;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+}
+
+nav div:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+nav div img {
+    width: 20px;
+    height: 20px;
+}
+
+nav div p{
+    font-size: 9px;
+}
+
+/** ASIDE NAVIGATION BAR **/
+
+
+
+
+
+
+
+/** MAIN CONTENT **/
+
+
+main {
+    /* border: 2px solid blue; */
+    width: 100%;
+    min-height: 150vh;
+    overflow-x: hidden;
+}
+
+
+main section {
+    /* border: 1px solid red; */
+    width: 93.5%;
+    height: 100%;
+    margin-left: 6.5vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 317px);
+    grid-auto-rows: 317px;
+    gap: 0.8em;
+    padding: 1em;
+}
+
+/* main section .card-container {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+} */
+
+
+/** IMAGE CONTAINER **/
+
+.card-container .imageContainer {
+    height: 60%;
+    width: 100%;
+    /* border: 1px solid orange; */
+
+}
+
+.card-container .imageContainer img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    vertical-align: top;
+}
+
+/** IMAGE CONTAINER **/
+
+
+
+
+
+
+/** CARDINFORMATION BELLOW PICTURE **/
+
+
+.infoContainer {
+    /* border: 2px solid purple; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    padding-top: 0.7em;
+}
+
+
+
+
+.infoContainer .channelPicture {
+    /* border: 1px solid red; */
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    margin-right: 0.5em;
+}
+
+
+.infoContainer .channelPicture img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+
+
+
+
+.infoContainer .textContainer {
+    width: 90%;
+    height: 100%;
+    /* border: 2px dotted blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+}
+
+
+.infoContainer .textContainer .title{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: auto;
+}
+
+.infoContainer .textContainer .title h2 {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.infoContainer .textContainer .nameAndViews {
+    /* border: 1px dashed red; */
+    width: 100%;
+    height: auto;
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.infoContainer .textContainer .nameAndViews a {
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+    text-decoration: none;
+}
+
+
+.infoContainer .textContainer .nameAndViews p {
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+}
+
+/** MAIN CONTENT **/
